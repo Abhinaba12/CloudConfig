@@ -2,11 +2,11 @@ A Cloud Storage Web Application using MERN Stack. Users can upload their data an
 
 
 ### Most Active Repositories
-1. **[Project Name 1](https://github.com/Abhinaba12/CodeHub)** - AI integrated MERN Stack platform supporting JavaScript, C++, Java, PHP & TypeScript. All in one Intuitive, Customizable Interface. Ideal for all skill levels, It offers a seamless experience for coding, learning & collaboration.
+1. **[CodeHub](https://github.com/Abhinaba12/CodeHub)** - AI integrated MERN Stack platform supporting JavaScript, C++, Java, PHP & TypeScript. All in one Intuitive, Customizable Interface. Ideal for all skill levels, It offers a seamless experience for coding, learning & collaboration.
    
-2. **[Project Name 2](https://github.com/Abhinaba12/PicLink)** - It's an applications that's help you to live any picture(jpg,png) in your local storage into online hosting. You can share this link to anyone you want.
+2. **[PicLink](https://github.com/Abhinaba12/PicLink)** - It's an applications that's help you to live any picture(jpg,png) in your local storage into online hosting. You can share this link to anyone you want.
    
-3. **[Project Name 3](https://github.com/Abhinaba12/Music)** - Simple music app using React.js Add your own music in public folder and make sure you add path in App.js. Install & enjoy it😎.
+3. **[Music](https://github.com/Abhinaba12/Music)** - Simple music app using React.js Add your own music in public folder and make sure you add path in App.js. Install & enjoy it😎.
 
 
 **Install Dependencies:**
