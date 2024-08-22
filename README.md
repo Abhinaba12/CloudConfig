@@ -27,6 +27,21 @@ A Cloud Storage Web Application using MERN Stack. Users can upload their data an
    cd ./client
     npm start
    ```
+Home Page
+![homepage](https://github.com/user-attachments/assets/5dfa5be1-055e-43c5-9481-6a65a5ef5698)
+
+Sign In
+![signin](https://github.com/user-attachments/assets/460c65c2-69a5-49c9-9a2b-a7b9be26cede)
+
+Sidebar
+![sidebar](https://github.com/user-attachments/assets/255e2b5f-161e-45b7-b5c2-f1eeb8088a65)
+
+Manege profile
+![profile](https://github.com/user-attachments/assets/7405ec8c-481f-4274-87b9-866fcdbe0d17)
+
+Search Page
+![searchpage](https://github.com/user-attachments/assets/7e4576de-5388-49a5-b6f0-154537deb936)
+
 
 # Contribute- You're welcome to share your idea's!
 There is no rules & regulation for contribution. 
