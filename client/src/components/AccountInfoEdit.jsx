@@ -140,7 +140,7 @@ const AccountEditDialog = () => {
             formData.append('newPassword', confirmPassword)
             profile && formData.append('profile', profile)
             setLoading(true)
-            const response = await axios.put('/api/v1/auth/update', formData)
+            const response = await axios.put('https://cloudconfig.onrender.com/api/v1/auth/update', formData)
             response && setLoading(false)
             if (response.status === 201) {
                 setOpenAccountEditDialog(!openAccountEditDialog)
@@ -171,7 +171,7 @@ const AccountEditDialog = () => {
                 return toast.error('Current password is reqired.')
             }
             if (window.confirm('Are You Sure You want to Delete Your Account?')) {
-                const response = await axios.post(`/api/v1/auth/delete-user`, { email, password })
+                const response = await axios.post(`https://cloudconfig.onrender.com/api/v1/auth/delete-user`, { email, password })
                 if (response.status === 202) {
                     toast.success(response.data.message)
                     setOpenAccountEditDialog(!openAccountEditDialog)
@@ -201,7 +201,7 @@ const AccountEditDialog = () => {
             <SignUpWrapper>
                 <LeftBox>
                     <label htmlFor="profile">
-                        {profile ? <Image src={profile && URL.createObjectURL(profile)} alt="" /> : <Image src={auth?.user?.profile ? `/api/v1/auth/user-profile/${auth?.user?.profile}` : "/images/account.jpg"} alt="" />}
+                        {profile ? <Image src={profile && URL.createObjectURL(profile)} alt="" /> : <Image src={auth?.user?.profile ? `https://cloudconfig.onrender.com/api/v1/auth/user-profile/${auth?.user?.profile}` : "/images/account.jpg"} alt="" />}
                         <Text>Add Profile Picture <AddAPhoto fontSize="small" /> </Text>
                         {profile?.size > 5000000 && <Error>Profile size should be less than 5 MB.</Error>}
                         {profile && !profile?.type.includes('image') && <Error>Only Image Flies .jpg, .jpeg, .png are accepted</Error>}
