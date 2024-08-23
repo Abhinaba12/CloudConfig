@@ -105,7 +105,7 @@ const AccountInfo = () => {
             }} >
             {
                 auth?.user?.profile ?
-                    <Image src={`/api/v1/auth/user-profile/${auth?.user?.profile}`} alt="profile" />
+                    <Image src={`https://cloudconfig.onrender.com/api/v1/auth/user-profile/${auth?.user?.profile}`} alt="profile" />
                     :
                     <Image src='/images/account.jpg' />
             }
