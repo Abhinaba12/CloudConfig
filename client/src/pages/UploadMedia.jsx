@@ -65,7 +65,7 @@ const UploadMedia = () => {
             formData.append('keywords', keywords)
             formData.append('visible', visibility)
             setLoading(true)
-            const response = await axios.post('/api/v1/media/upload', formData, {
+            const response = await axios.post('https://cloudconfig.onrender.com/api/v1/media/upload', formData, {
                 onUploadProgress: (data) => {
                     setUploded(Math.round(data.progress * 100))
                 }
