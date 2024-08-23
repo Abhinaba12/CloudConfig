@@ -27,7 +27,7 @@ const YourDocs = () => {
     useEffect(() => {
         const getAllFiles = async () => {
             setLoading(true)
-            const response = await axios.get('/api/v1/media/get-user-media')
+            const response = await axios.get('https://cloudconfig.onrender.com/api/v1/media/get-user-media')
             response && setTimeout(() => setLoading(false), 500)
             if (response.data.success) {
                 const filterFiles = response?.data?.files.filter(e => e.contentType.includes('application'))
