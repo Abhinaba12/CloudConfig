@@ -28,7 +28,7 @@ const Home = () => {
     useEffect(() => {
         const getAllFiles = async () => {
             setLoading(true)
-            const response = await axios.get('/api/v1/media/get-all')
+            const response = await axios.get('https://cloudconfig.onrender.com/api/v1/media/get-all')
             response && setTimeout(() => setLoading(false), 500)
             if (response.data.success) {
                 setFiles(response.data.files)
@@ -42,7 +42,7 @@ const Home = () => {
         const loadMore = async () => {
             try {
                 setLoading(true);
-                const { data } = await axios.get(`/api/v1/media/more-files/${page}`)
+                const { data } = await axios.get(`https://cloudconfig.onrender.com/api/v1/media/more-files/${page}`)
                 if (data.success) {
                     setFiles([...files, ...data?.files]);
                     setLoading(false)
