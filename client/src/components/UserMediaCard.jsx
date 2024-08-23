@@ -130,7 +130,7 @@ const HomeMediaCard = ({ file }) => {
     return (
         <>
             <Card key={file?._id} >
-                <CardImage onClick={handleMenuClick} src={file.contentType.includes('image') ? `https://cloudconfig.onrender.com/api/v1/media/get/${file?.filename}` : file.contentType.includes('video') ? '/images/video-file-image.png' : '/images/pdf-file-image.png'} alt="file" />
+                <CardImage onClick={handleMenuClick} src={file.contentType.includes('image') ? `/api/v1/media/get/${file?.filename}` : file.contentType.includes('video') ? '/images/video-file-image.png' : '/images/pdf-file-image.png'} alt="file" />
                 <Box>
                     <Menu
                         id="basic-menu"
