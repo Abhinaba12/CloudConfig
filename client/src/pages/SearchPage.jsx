@@ -27,7 +27,7 @@ const SearchPage = () => {
     useEffect(() => {
         const getAllFiles = async () => {
             setLoading(true)
-            const response = await axios.get(`/api/v1/media/search/${searchValue}`)
+            const response = await axios.get(`https://cloudconfig.onrender.com/api/v1/media/search/${searchValue}`)
             response && setTimeout(() => setLoading(false), 500)
             if (response.data.success) {
                 setFiles(response.data.files)
