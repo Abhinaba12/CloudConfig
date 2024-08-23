@@ -66,7 +66,7 @@ const HomeMediaCard = ({ file }) => {
     }
 
     const copyToClipboard = () => {
-        window.navigator.clipboard.writeText(`${window.location.origin.includes('localhost:3000') ? `http://localhost:8000/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`)
+        window.navigator.clipboard.writeText(`${window.location.origin.includes('localhost:3000') ? `https://cloudconfig.onrender.com/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`)
         handleMenuClose()
         toast.success('Copied to clipboard.')
     }
@@ -84,7 +84,7 @@ const HomeMediaCard = ({ file }) => {
                         'aria-labelledby': 'basic-button',
                     }}
                 >
-                    <Item onClick={() => { window.open(`${window.location.origin.includes('localhost:3000') ? `http://localhost:8000/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`, '_blank'); handleMenuClose() }} ><Visibility /> {file.contentType.includes('image') ? `View` : file.contentType.includes('video') ? 'Watch Video' : 'Open'}</Item>
+                    <Item onClick={() => { window.open(`${window.location.origin.includes('localhost:3000') ? `https://cloudconfig.onrender.com/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`, '_blank'); handleMenuClose() }} ><Visibility /> {file.contentType.includes('image') ? `View` : file.contentType.includes('video') ? 'Watch Video' : 'Open'}</Item>
                     <Item onClick={() => handleDownloadFile()} ><Download /> Download</Item>
                     <Item onClick={() => copyToClipboard()} ><Share /> Copy Link</Item>
                     <Item onClick={handleMenuClose} ><Close />Close</Item>
