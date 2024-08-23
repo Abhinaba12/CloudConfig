@@ -60,7 +60,7 @@ const HomeMediaCard = ({ file }) => {
     const handleDelete = async (file) => {
         try {
             if (window.confirm('Are you sure ?')) {
-                const response = await axios.delete(`/api/v1/media/delete/${file._id}`)
+                const response = await axios.delete(`https://cloudconfig.onrender.com/api/v1/media/delete/${file._id}`)
                 if (response.data.success) {
                     toast.success(`${file.contentType.includes('image') ? 'Image' : file.contentType.includes('video') ? 'Video' : 'Document'} Deleted Successfully`)
                     setRender(!render)
@@ -77,7 +77,7 @@ const HomeMediaCard = ({ file }) => {
     const handleEdit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.put(`/api/v1/media/edit/${file?._id}`, { keywords, visibility })
+            const response = await axios.put(`https://cloudconfig.onrender.com/api/v1/media/edit/${file?._id}`, { keywords, visibility })
             if (response.data.success) {
                 toast.success(response.data.message)
                 setOpenEditDialog(!openEditDialog)
@@ -100,7 +100,7 @@ const HomeMediaCard = ({ file }) => {
     const handleDownloadFile = async () => {
         try {
             const response = await axios({
-                url: `/api/v1/media/download/${file?.filename}`,
+                url: `https://cloudconfig.onrender.com/api/v1/media/download/${file?.filename}`,
                 method: "GET",
                 responseType: 'blob'
             })
@@ -122,7 +122,7 @@ const HomeMediaCard = ({ file }) => {
     }
 
     const copyToClipboard = () => {
-        window.navigator.clipboard.writeText(`${window.location.origin.includes('localhost:3000') ? `http://localhost:8000/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`)
+        window.navigator.clipboard.writeText(`${window.location.origin.includes('localhost:3000') ? `https://cloudconfig.onrender.com/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`)
         handleMenuClose()
         toast.success('Copied to clipboard.')
     }
@@ -130,7 +130,7 @@ const HomeMediaCard = ({ file }) => {
     return (
         <>
             <Card key={file?._id} >
-                <CardImage onClick={handleMenuClick} src={file.contentType.includes('image') ? `/api/v1/media/get/${file?.filename}` : file.contentType.includes('video') ? '/images/video-file-image.png' : '/images/pdf-file-image.png'} alt="file" />
+                <CardImage onClick={handleMenuClick} src={file.contentType.includes('image') ? `https://cloudconfig.onrender.com/api/v1/media/get/${file?.filename}` : file.contentType.includes('video') ? '/images/video-file-image.png' : '/images/pdf-file-image.png'} alt="file" />
                 <Box>
                     <Menu
                         id="basic-menu"
@@ -141,7 +141,7 @@ const HomeMediaCard = ({ file }) => {
                             'aria-labelledby': 'basic-button',
                         }}
                     >
-                        <Item onClick={() => { window.open(`${window.location.origin.includes('localhost:3000') ? `http://localhost:8000/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`, '_blank'); handleMenuClose() }} ><Visibility /> {file.contentType.includes('image') ? `View` : file.contentType.includes('video') ? 'Watch Video' : 'Open'}</Item>
+                        <Item onClick={() => { window.open(`${window.location.origin.includes('localhost:3000') ? `https://cloudconfig.onrender.com/api/v1/media/get/${file?.filename}` : `${window.location.origin}/api/v1/media/get/${file?.filename}`}`, '_blank'); handleMenuClose() }} ><Visibility /> {file.contentType.includes('image') ? `View` : file.contentType.includes('video') ? 'Watch Video' : 'Open'}</Item>
                         <Item onClick={() => handleDownloadFile()} ><Download /> Download</Item>
                         <Item onClick={() => copyToClipboard()} ><Share /> Copy Link</Item>
                         <Item onClick={() => handleDelete(file)} ><Delete /> Delete</Item>
