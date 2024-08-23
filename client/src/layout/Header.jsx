@@ -101,7 +101,7 @@ const Header = () => {
                                                 width: 40,
                                                 borderRadius: '50%',
                                                 cursor: 'pointer'
-                                            }} src={`/api/v1/auth/user-profile/${auth?.user?.profile}`} alt="profile" />
+                                            }} src={`https://cloudconfig.onrender.com/api/v1/auth/user-profile/${auth?.user?.profile}`} alt="profile" />
                                         :
                                         <img onClick={() => setOpenAccountInfoDialog(!openAccountInfoDialog)}
                                             style={{
