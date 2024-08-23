@@ -163,7 +163,7 @@ const Login = () => {
             formData.append('password', password)
             profile && formData.append('profile', profile)
             setLoading(true)
-            const response = await axios.post('/api/v1/auth/register', formData)
+            const response = await axios.post('https://cloudconfig.onrender.com/api/v1/auth/register', formData)
             response && setLoading(false)
             response && toast.success(response.data.message)
             if (response.status === 201) {
@@ -180,7 +180,7 @@ const Login = () => {
         e.preventDefault()
         try {
             setLoading(true)
-            const response = await axios.post('/api/v1/auth/login', { email, password })
+            const response = await axios.post('https://cloudconfig.onrender.com/api/v1/auth/login', { email, password })
             response && setLoading(false)
             if (response.data.success) {
                 setAuth(response.data)
